@@ -43,8 +43,13 @@
       </section>
 
       <div class="composer-wrap">
+        <div id="attachmentList" class="attachment-list" aria-live="polite"></div>
+        <div id="recordingStatus" class="recording-status" aria-live="polite" hidden></div>
         <form id="chatForm" class="chat-form">
-          <textarea id="messageInput" placeholder="Message Groq AI" rows="1" aria-label="Your message" required></textarea>
+          <input id="fileInput" type="file" accept="image/jpeg,image/png,image/webp,.pdf,.docx,.txt,.md,.csv,.json,.html" multiple hidden>
+          <button id="attachButton" class="composer-tool" type="button" aria-label="Attach images or documents" title="Attach images or documents">＋</button>
+          <textarea id="messageInput" placeholder="Message Groq AI" rows="1" aria-label="Your message"></textarea>
+          <button id="voiceButton" class="composer-tool voice-button" type="button" aria-label="Record voice note" title="Record voice note">♩</button>
           <button id="sendButton" type="submit" aria-label="Send message">↑</button>
         </form>
         <footer class="chat-footer">Groq AI can make mistakes. Check important information.</footer>
