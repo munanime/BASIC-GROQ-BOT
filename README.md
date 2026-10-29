@@ -4,7 +4,7 @@ A single Node.js service that serves the web app and proxies chat, vision, docum
 
 ## Run locally
 
-1. Install Node.js 18 or newer.
+1. Install Node.js 24 (the project pins `24.x` for Vercel and local version managers).
 2. Copy `.env.example` to `.env` and set `GROQ_API_KEY`.
 3. Run `npm ci`.
 4. Run `npm start` and open `http://localhost:3000`.
@@ -14,6 +14,8 @@ A single Node.js service that serves the web app and proxies chat, vision, docum
 Deploy this repository as a Node.js web service. Set the start command to `npm start`, and add `GROQ_API_KEY` in the host's secret environment variable settings. The service listens on `PORT` and exposes `GET /healthz` for health checks. Keep `.env` out of source control; `.env.example` contains placeholders only.
 
 If the host uses one trusted reverse proxy, set `TRUST_PROXY=1` so per-client request limits can use the forwarded client address. Do not enable this behind an untrusted proxy.
+
+If an npm build warns about an unknown `cache-dir` setting, remove the `npm_config_cache_dir` / `NPM_CONFIG_CACHE_DIR` variable from the hosting project's environment settings. npm's supported cache setting is `npm_config_cache`.
 
 ## Supported inputs
 
