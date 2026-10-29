@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#212121">
+  <title>Groq AI</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Chat history">
+      <div class="sidebar-top">
+        <a class="brand" href="/" aria-label="Groq AI home">
+          <span class="brand-mark" aria-hidden="true">G</span>
+          <span>Groq AI</span>
+        </a>
+        <button id="newChatButton" class="new-chat-button" type="button">
+          <span aria-hidden="true">＋</span> New chat
+        </button>
+      </div>
+      <div class="history-heading">Recent</div>
+      <nav id="chatHistory" class="chat-history" aria-label="Saved conversations"></nav>
+      <div class="sidebar-note">Your chats are saved in this browser.</div>
+    </aside>
+
+    <main class="main-panel">
+      <header class="topbar">
+        <button id="mobileMenuButton" class="icon-button mobile-menu" type="button" aria-label="Toggle chat history">☰</button>
+        <div class="topbar-title">Groq AI <span class="status-dot" aria-label="Online"></span></div>
+        <button id="topNewChatButton" class="icon-button top-new-chat" type="button" aria-label="Start a new chat">＋</button>
+      </header>
+
+      <section class="chat-area" aria-label="Conversation">
+        <div class="conversation" id="conversation">
+          <div class="welcome-message" id="welcomeMessage">
+            <div class="welcome-icon" aria-hidden="true">✦</div>
+            <h1>What can I help with?</h1>
+            <p>Ask a question, explore an idea, or get something done.</p>
+          </div>
+          <div id="chatMessages" class="chat-messages" aria-live="polite"></div>
+        </div>
+      </section>
+
+      <div class="composer-wrap">
+        <form id="chatForm" class="chat-form">
+          <textarea id="messageInput" placeholder="Message Groq AI" rows="1" aria-label="Your message" required></textarea>
+          <button id="sendButton" type="submit" aria-label="Send message">↑</button>
+        </form>
+        <footer class="chat-footer">Groq AI can make mistakes. Check important information.</footer>
+      </div>
+    </main>
+  </div>
+  <div id="sidebarBackdrop" class="sidebar-backdrop"></div>
+  <script src="/script.js" defer></script>
+</body>
+</html>
